@@ -1,0 +1,35 @@
+main():
+  file = input('What is name of the file that has DNA sequences: ')
+  print('')
+  try:
+    f = open(file,'r')
+  except OSError:
+    print("Yeah, naw.")
+    return 
+    
+  while True:
+      str1 = f.readline().rstrip
+      if not str1:
+        break
+      str2 = f.readline().rstrip
+   
+      match = 0
+      miss = 0
+      str3 = ''
+      str4 = ''
+      for i in range(len(str1)):
+        if str1[i] == str2[i]:
+          match += 1
+          str3 += str1[i].lower()
+          str4 += str2[i].lower()
+        else:
+          miss += 1
+          str3 += str1[i].upper()
+          str4 += str2[i].upper()
+     
+      print('Matches:', match, 'Mismatches:', miss)
+      print('Str1:', str3)
+      print('Str2:', str4)
+      print()
+      
+main()
